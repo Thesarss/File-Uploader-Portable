@@ -1,0 +1,35 @@
+# Cloudflare Named Tunnel Configuration
+# Untuk URL yang tetap (tidak berubah)
+
+# CARA SETUP:
+# 1. Login: .\cloudflared.exe tunnel login
+# 2. Buat tunnel: .\cloudflared.exe tunnel create file-uploader
+# 3. Ganti <TUNNEL-ID> di bawah dengan ID yang diberikan
+# 4. Ganti <USERNAME> dengan username Windows Anda
+# 5. Ganti yourdomain.com dengan domain Anda (atau pakai subdomain gratis)
+# 6. Setup DNS: .\cloudflared.exe tunnel route dns file-uploader upload.yourdomain.com
+# 7. Setup DNS: .\cloudflared.exe tunnel route dns file-uploader api.yourdomain.com
+# 8. Jalankan: .\cloudflared.exe tunnel --config cloudflared-named-tunnel.yml run file-uploader
+
+# ID tunnel Anda (didapat dari step 2)
+tunnel: <TUNNEL-ID>
+
+# Path ke file credentials (didapat dari step 2)
+credentials-file: C:\Users\<USERNAME>\.cloudflared\<TUNNEL-ID>.json
+
+# Routing rules
+ingress:
+  # Frontend - Web Interface
+  - hostname: upload.yourdomain.com
+    service: http://localhost:4173
+  
+  # Backend - API
+  - hostname: api.yourdomain.com
+    service: http://localhost:3000
+  
+  # Catch-all rule (WAJIB ada di akhir)
+  - service: http_status:404
+
+# Optional: Logging
+# loglevel: info
+# logfile: cloudflared.log
