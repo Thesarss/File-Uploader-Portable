@@ -7,7 +7,15 @@
 
 Aplikasi web modern untuk upload file dengan kategorisasi otomatis, chunked upload untuk file besar, dan akses online via Cloudflare Tunnel. Portable dan mudah digunakan tanpa instalasi server kompleks.
 
-![File Uploader Screenshot](https://via.placeholder.com/800x400/3b82f6/ffffff?text=File+Uploader+UI)
+## 🖼️ Preview
+
+**Modern UI dengan gradient design:**
+- Drag & drop interface yang intuitif
+- Two-column layout (Upload & History)
+- Real-time progress tracking
+- Responsive untuk semua device (desktop, tablet, mobile)
+
+> 💡 **Tip:** Ambil screenshot aplikasi Anda dan upload ke repository untuk mengganti bagian ini!
 
 ## 📋 Daftar Isi
 
